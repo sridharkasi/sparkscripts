@@ -5,8 +5,8 @@ from pyspark.sql import *
 from CommonFunc.utils import *
 import pyspark.sql
 
-if __name__ == "__main__":
-# def test_script():
+# if __name__ == "__main__":
+def test_script():
     conf = get_spark_app_config()
 
     spark = SparkSession \
