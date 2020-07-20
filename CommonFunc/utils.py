@@ -12,6 +12,19 @@ def count_by_country(survey_df):
         .select("Age", "Gender", "Country", "state") \
         .groupBy("Country") \
         .count()
+def count_country(survey_df):
+    return survey_df\
+        .select ("Country").distinct().collect() \
+
+def countRec(survey_df):
+    return survey_df\
+        # .select ("Age").count \
+def nullcheck(survey_df):
+    return survey_df.filter("state isNull") \
+
+def Dupcheck(survey_df):
+    return survey_df \
+        .groupBy("Age", "Gender", "Country").count().filter("count > 1")
 
 def get_spark_app_config():
     spark_conf = SparkConf()
